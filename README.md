@@ -1,6 +1,8 @@
-# Aryan-Amit-Arya-25BAI10295-VITyarthi-Assignment
+# Aryan Amit Arya 
+# 25BAI10295
+# VITyarthi Assignment
 
-# Covid-19-detection-using-Machine-Learning
+# Covid-19 detection using Machine Learning
 Technological advancement has a profound effect
 on all spheres of life, whether in the medical field or in any
 other field. Artificial intelligence has shown promising results in
