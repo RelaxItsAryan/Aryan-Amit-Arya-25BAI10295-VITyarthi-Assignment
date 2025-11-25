@@ -10,7 +10,7 @@
 
 -----
 
-##  Overview of the Project
+##  Problem Statement
 
 This project addresses the critical need for **swift and reliable diagnosis** of the highly contagious **COVID-19** virus. We harness the power of **Machine Learning (ML)** to develop a system for early detection. The core methodology involves:
 
@@ -22,21 +22,27 @@ The goal is to create an efficient system that predicts a person's COVID-19 stat
 
 -----
 
-##  Features
+## Scope of the Project
 
-The developed system includes the following key features:
+The scope of this project is focused on the modeling and classification aspect of COVID-19 detection:
 
-  * **Comparative Analysis:** Provides a quantitative comparison of the predictive accuracy of multiple ML models (KNN, Random Forest, Naive Bayes).
-  * **Predictive Model:** Utilizes the most accurate algorithm to predict the presence of the COVID-19 virus in an individual.
+Data Acquisition and Preprocessing: Sourcing and cleaning a relevant public dataset (e.g., patient symptoms, lab reports, or demographic information) for training ML models.
 
-<div>
-  <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcRuOY5n-zSutY3TxQC8pcbH0l8HRSjkWFSBQcI4Cobt7blIlWb4-67QSqYTUBPFcInkM0wYukMKIqSO1yGPLj-M-zum8caRccB5MOMDv9A6TWbHgcA"
-</div>
+Algorithm Implementation and Comparison: Implementing and training multiple classification algorithms (K-Nearest Neighbors, Random Forest, Naive Bayes) on the processed dataset.
 
-  * **Data-Driven Diagnosis:** Offers a non-invasive, rapid screening tool based on readily available data (e.g., patient symptoms or laboratory results, depending on the dataset used).
-  * **Model Evaluation:** Reports standard classification metrics (e.g., Accuracy, Precision, Recall, F1-Score) to assess the model's performance.
+Performance Evaluation: Rigorously evaluating the models based on key metrics, primarily accuracy, to determine the best-performing classifier.
 
------
+Final Model Development: Developing the final, optimized predictive model using the superior algorithm.
+
+Output: The final output is a trained, validated machine learning model and a script capable of making binary predictions (Positive/Negative) on new, unseen data.
+
+The project explicitly excludes:
+
+Developing a full-scale clinical application or integrating with hospital infrastructure.
+
+The collection of new, primary patient data.
+
+Advanced deep learning models (the focus is on comparative analysis of classical ML).
 
 ##  Technologies/Tools Used
 
@@ -48,84 +54,14 @@ This project relies on standard data science and machine learning libraries in a
   * **Visualization:** **Matplotlib** and **Seaborn** (for data exploration and results plotting).
   * **Environment Management:** Recommended use of **Conda** or **venv** (Python virtual environment).
 
------
+## Target Users
 
-##  Steps to Install & Run the Project
+The primary target users for the output of this project include:
 
-Follow these steps to set up the project environment and run the main script:
+Healthcare Administrators and Public Health Officials: To gain quick insights into potential outbreaks and resource needs based on computational predictions.
 
-### 1\. Clone the Repository
+Medical Researchers and Data Scientists: To serve as a benchmark or foundational model for further research into COVID-19 diagnostics.
 
-```bash
-git clone [repository_link_here]
-cd [project_folder_name]
-```
+Clinicians and Screening Centers (Indirectly): To provide a rapid, non-invasive triage tool to prioritize individuals for definitive (e.g., PCR) testing.
 
-### 2\. Create and Activate a Virtual Environment
-
-It is recommended to use a virtual environment to manage dependencies:
-
-```bash
-conda create -n covid-env python=3.9
-conda activate covid-env
-
-python -m venv covid-env
-source covid-env/bin/activate  # On Linux/macOS
-.\covid-env\Scripts\activate   # On Windows
-```
-
-### 3\. Install Required Dependencies
-
-Install all necessary packages using the `requirements.txt` file (if provided):
-
-```bash
-pip install -r requirements.txt
-```
-
-*If `requirements.txt` is not available, manually install the main dependencies:*
-
-```bash
-pip install pandas numpy scikit-learn matplotlib seaborn
-```
-
-### 4\. Run the Main Script
-
-Execute the primary Python script to perform the data loading, model training, comparison, and testing:
-
-```bash
-python main_detection_script.py
-```
-
-*(Note: Replace `main_detection_script.py` with the actual name of your primary execution file.)*
-
------
-
-## Instructions for Testing
-
-The final predictive system can be tested to verify its performance and generalization ability.
-
-### 1\. Automatic Testing
-
-The main script automatically performs cross-validation and splits the data into training and testing sets.
-
-  * **Check the Console Output:** After running the script, the console will display the **accuracy scores** for KNN, Random Forest, and Naive Bayes, followed by the final performance metrics (e.g., **Confusion Matrix**, Classification Report) of the selected best model on the unseen **test data**.
-
-### 2\. Manual Prediction Testing
-
-To test the model with a new, single data point:
-
-1.  Open the project's Jupyter Notebook or Python prediction script.
-2.  Define a new input vector (a list or array of features) matching the structure used during training:
-    ```python
-    new_patient_features = [[Fever_Yes=1, DryCough_Yes=1, Fatigue_Yes=1, ...]] 
-    ```
-3.  Load the saved, trained model (e.g., using `pickle` or `joblib`):
-    ```python
-    import joblib
-    model = joblib.load('best_model.pkl')
-    ```
-4.  Use the model's `predict()` method on the new data:
-    ```python
-    prediction = model.predict(new_patient_features)
-    print(f"Prediction: {'COVID-19 Positive' if prediction[0] == 1 else 'COVID-19 Negative'}")
-    ```
+Students and Educators: As an illustrative case study in applying machine learning to real-world biomedical problems.
